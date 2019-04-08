@@ -1,20 +1,39 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'profile_screen/profile.dart';
+
+void main() => runApp(MaterialApp(
+      title: 'Flutter UI',
+      initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      routes: {
+        '/': (context) => MyApp(),
+        '/profile_screen': (context) => ProfileScreen()
+      },
+    ));
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter UI',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter UI'),
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Flutter UI'),
+      body: Center(
+        child: ListView(
+          children: <Widget>[
+            RaisedButton(
+              child: Text('Profile Screen'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/profile_screen');
+              },
+            ),
+          ],
         ),
-      )
+      ),
     );
   }
 }
