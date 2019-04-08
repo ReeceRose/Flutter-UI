@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'spotify_login_register/login.dart';
 import 'profile_screen/profile.dart';
 
 void main() => runApp(MaterialApp(
@@ -11,7 +12,8 @@ void main() => runApp(MaterialApp(
       ),
       routes: {
         '/': (context) => MyApp(),
-        '/profile_screen': (context) => ProfileScreen()
+        '/spotify_login': (context) => SpotifyLoginPage(),
+        '/profile_screen': (context) => ProfileScreen(),
       },
     ));
 
@@ -25,6 +27,12 @@ class MyApp extends StatelessWidget {
       body: Center(
         child: ListView(
           children: <Widget>[
+            RaisedButton(
+              child: Text('Spotify Login & Register'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/spotify_login');
+              },
+            ),
             RaisedButton(
               child: Text('Profile Screen'),
               onPressed: () {
