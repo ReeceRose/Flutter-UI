@@ -19,5 +19,5 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Light.ttf
-        - asset: assets/fonts/Montserrat-Lightitalict.ttf
+        - asset: assets/fonts/Montserrat-LightItalic.ttf
           style: italic
