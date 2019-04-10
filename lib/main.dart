@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             RaisedButton(
-              child: Text('Spotify Login & Register'),
+              child: Text('Spotify Login'),
               onPressed: () {
                 Navigator.pushNamed(context, '/spotify_login');
               },
