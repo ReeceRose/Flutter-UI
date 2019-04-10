@@ -4,4 +4,4 @@ This is a repository which will contain many UI challenges. Some UI challenges a
 
 # UI Chllanges
 - [Spotify Login](lib/spotify_login/)
-- [Profile Scren](lib/profile_screen/)
+- [Profile Screen](lib/profile_screen/)
