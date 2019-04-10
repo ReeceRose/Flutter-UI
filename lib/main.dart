@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'spotify_login_register/login.dart';
+import 'spotify_login/login.dart';
 import 'profile_screen/profile.dart';
 
 void main() => runApp(MaterialApp(
