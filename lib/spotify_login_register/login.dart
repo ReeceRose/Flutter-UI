@@ -12,7 +12,7 @@ class SpotifyLoginPage extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(17.0, 110.0, 0.0, 0.0),
                   child: Text(
                     'Hello',
                     style:
@@ -20,7 +20,7 @@ class SpotifyLoginPage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 175.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(17.0, 175.0, 0.0, 0.0),
                   child: Text(
                     'There',
                     style:
@@ -90,10 +90,97 @@ class SpotifyLoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
+                SizedBox(
+                  height: 35.0,
+                ),
+                Container(
+                  height: 55.0,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Color.fromARGB(255, 3, 216, 90),
+                    elevation: 7.0,
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Center(
+                        child: Text(
+                          'LOGIN',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 19.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  height: 55.0,
+                  color: Colors.transparent,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        style: BorderStyle.solid,
+                        width: 1.0,
+                      ),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                          child: ImageIcon(
+                            NetworkImage(
+                                'https://freeiconshop.com/wp-content/uploads/edd/facebook-solid.png'),
+                          ),
+                        ),
+                        Center(
+                          child: Text(
+                            'Log in with Facebook',
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'New to Spotify?',
+              ),
+              SizedBox(
+                width: 5.0,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  'Register',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 3, 216, 90),
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
