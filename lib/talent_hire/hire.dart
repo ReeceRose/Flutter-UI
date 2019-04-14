@@ -14,12 +14,19 @@ class HirePage extends StatelessWidget {
         ),
         elevation: 0.0,
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         leading: IconButton(
           onPressed: () {},
           icon: Icon(Icons.arrow_back),
           color: Colors.grey,
         ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            color: Colors.grey,
+            icon: Icon(Icons.menu),
+          )
+        ],
       ),
     );
   }
