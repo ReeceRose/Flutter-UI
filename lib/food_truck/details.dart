@@ -12,7 +12,7 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
   List<String> photos = [
     'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     'https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    'https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+    'https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   ];
 
   void _previousImage() {
@@ -30,6 +30,7 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
   @override
   Widget build(BuildContext context) {
     const Color starColour = Color.fromARGB(255, 227, 108, 74);
+    const Color greenColour = Color.fromARGB(255, 28, 120, 81);
     return Scaffold(
       body: ListView(
         shrinkWrap: true,
@@ -125,8 +126,90 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
                         )
                       ],
                     ),
-                  )
+                  ),
                 ],
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'OPEN UNTIL 7PM',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    Text(
+                      'The Cinnamon Snail',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 27.0,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '17th st & Union Sq East',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Icon(Icons.location_on),
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        Text(
+                          '400ft Away',
+                          style: TextStyle(
+                            color: Colors.black.withOpacity(0.6),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 7.0,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.wifi,
+                          color: greenColour,
+                        ),
+                        SizedBox(
+                          width: 4.0,
+                        ),
+                        Text(
+                          'Location confirmed by 3 users today',
+                          style: TextStyle(
+                            color: greenColour,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               )
             ],
           )
