@@ -210,11 +210,123 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                alignment: Alignment(-0.85, 0),
+                child: Text(
+                  'FEATURED ITEMS',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              _buildListItem(
+                'https://images.pexels.com/photos/1209029/pexels-photo-1209029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'Maple Mustard Tempeh',
+                'Marinated kale, onion, tomato, and roasted garlic aioli on grilled spelt bread.',
+                11.25,
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              _buildListItem(
+                'https://images.pexels.com/photos/236487/pexels-photo-236487.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'Gochujang Glazed Crispy Seitan',
+                'With kimchi, pickled red onions, arugula, and sriracha mayo on a grilled pretzel bun',
+                12.25,
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              _buildListItem(
+                'https://images.pexels.com/photos/1209029/pexels-photo-1209029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'Maple Mustard Tempeh',
+                'Marinated kale, onion, tomato, and roasted garlic aioli on grilled spelt bread.',
+                11.25,
+              ),
             ],
           )
         ],
       ),
+    );
+  }
+
+  Widget _buildListItem(String picture, String itemName, String itemDescription,
+      double itemPrice) {
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+              height: 100.0,
+              width: 100.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(picture),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(10.0),
+                  bottomRight: Radius.circular(10.0),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 10.0,
+            ),
+            Container(
+              height: 100.0,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    itemName,
+                    style: TextStyle(
+                        fontSize: 15.0,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Container(
+                    width: 275.0,
+                    child: Text(
+                      itemDescription,
+                      // overflow: TextOverflow.fade,
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        fontFamily: 'Montserrat',
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    '\$$itemPrice',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Montserrat',
+                      // fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
