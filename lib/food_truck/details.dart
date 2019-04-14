@@ -7,7 +7,38 @@ class FoodTruckDetailsPage extends StatefulWidget {
   _FoodTruckDetailsPageState createState() => _FoodTruckDetailsPageState();
 }
 
-class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
+class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage>
+    with SingleTickerProviderStateMixin {
+  AnimationController animationController;
+  Animation carouselAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = new AnimationController(
+      duration: Duration(seconds: 12),
+      vsync: this,
+    );
+    carouselAnimation =
+        IntTween(begin: 0, end: photos.length - 1).animate(animationController)
+          ..addListener(
+            () {
+              setState(
+                () {
+                  photoIndex = carouselAnimation.value;
+                },
+              );
+            },
+          );
+    animationController.repeat();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
   int photoIndex = 0;
   List<String> photos = [
     'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -15,17 +46,17 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
     'https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   ];
 
-  void _previousImage() {
-    setState(() {
-      photoIndex = photoIndex > 0 ? photoIndex - 1 : 0;
-    });
-  }
+  // void _previousImage() {
+  //   setState(() {
+  //     photoIndex = photoIndex > 0 ? photoIndex - 1 : 0;
+  //   });
+  // }
 
-  void _nextImage() {
-    setState(() {
-      photoIndex = photoIndex < photos.length - 1 ? photoIndex + 1 : photoIndex;
-    });
-  }
+  // void _nextImage() {
+  //   setState(() {
+  //     photoIndex = photoIndex < photos.length - 1 ? photoIndex + 1 : photoIndex;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -64,22 +95,22 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
                       )
                     ],
                   ),
-                  GestureDetector(
-                    child: Container(
-                      height: 250.0,
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.transparent,
-                    ),
-                    onTap: _nextImage,
-                  ),
-                  GestureDetector(
-                    child: Container(
-                      height: 250.0,
-                      width: MediaQuery.of(context).size.width / 2,
-                      color: Colors.transparent,
-                    ),
-                    onTap: _previousImage,
-                  ),
+                  // GestureDetector(
+                  //   child: Container(
+                  //     height: 250.0,
+                  //     width: MediaQuery.of(context).size.width,
+                  //     color: Colors.transparent,
+                  //   ),
+                  //   onTap: _nextImage,
+                  // ),
+                  // GestureDetector(
+                  //   child: Container(
+                  //     height: 250.0,
+                  //     width: MediaQuery.of(context).size.width / 2,
+                  //     color: Colors.transparent,
+                  //   ),
+                  //   onTap: _previousImage,
+                  // ),
                   Positioned(
                     top: 220.0,
                     left: 5.0,
