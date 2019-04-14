@@ -1,6 +1,6 @@
-# Spotify Login
+# Talent Hire
 
-Spotify inspired log in screen
+Relationship coaching inspired application
 
 Inspired by: [this dribble](https://dribbble.com/shots/4486758-Relationship-Coaching-App)
 
