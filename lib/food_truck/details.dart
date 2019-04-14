@@ -63,6 +63,22 @@ class _FoodTruckDetailsPageState extends State<FoodTruckDetailsPage> {
                       )
                     ],
                   ),
+                  GestureDetector(
+                    child: Container(
+                      height: 250.0,
+                      width: MediaQuery.of(context).size.width,
+                      color: Colors.transparent,
+                    ),
+                    onTap: _nextImage,
+                  ),
+                  GestureDetector(
+                    child: Container(
+                      height: 250.0,
+                      width: MediaQuery.of(context).size.width / 2,
+                      color: Colors.transparent,
+                    ),
+                    onTap: _previousImage,
+                  ),
                   Positioned(
                     top: 220.0,
                     left: 5.0,
