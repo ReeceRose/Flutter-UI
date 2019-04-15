@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HirePage extends StatelessWidget {
-  Color greenColour = Color.fromARGB(255, 46, 194, 105);
-  Color backgroundGreen = Color.fromARGB(255, 233, 248, 239);
+  final Color greenColour = Color.fromARGB(255, 46, 194, 105);
+  final Color backgroundGreen = Color.fromARGB(255, 233, 248, 239);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
