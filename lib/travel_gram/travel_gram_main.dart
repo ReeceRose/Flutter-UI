@@ -96,6 +96,42 @@ class TravelGramMainPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    width: 25.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 27.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'MALDIVES TRIP 2018',
+                          style: TextStyle(
+                              color: Colors.grey.shade700, fontSize: 14.0),
+                        ),
+                        SizedBox(
+                          height: 4.0,
+                        ),
+                        Text(
+                          'Add an update',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 100.0,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.grey,
+                    ),
+                  )
                 ],
               ),
             ),
