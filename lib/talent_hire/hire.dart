@@ -247,11 +247,11 @@ class HirePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 15.0,
+            height: 35.0,
           ),
           Expanded(
             child: Container(
-              width: 175.0,
+              width: 300.0,
               decoration: BoxDecoration(
                 color: status == 'Available' ? greenColour : Colors.grey,
                 borderRadius: BorderRadius.only(
@@ -260,7 +260,11 @@ class HirePage extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text('Request'),
+                child: Text(
+                  'Request',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           )
