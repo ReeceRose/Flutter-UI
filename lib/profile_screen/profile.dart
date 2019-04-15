@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Positioned(
             width: 350.0,
-            left: 25.0,
+            left: (MediaQuery.of(context).size.width / 2) - 175,
             top: MediaQuery.of(context).size.height / 5,
             child: Column(
               children: <Widget>[
