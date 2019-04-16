@@ -5,13 +5,55 @@ class TravelGramMainPage extends StatefulWidget {
   _TravelGramMainPageState createState() => _TravelGramMainPageState();
 }
 
-class _TravelGramMainPageState extends State<TravelGramMainPage> {
+class _TravelGramMainPageState extends State<TravelGramMainPage>
+    with SingleTickerProviderStateMixin {
+  TabController tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    tabController = new TabController(length: 4, vsync: this);
+  }
+
   final Color titleColour = Color.fromARGB(255, 87, 94, 106);
   final Color blueColour = Color.fromARGB(255, 84, 161, 255);
   final Color greyColour = Color.fromARGB(255, 169, 169, 169);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Material(
+        color: Colors.white,
+        child: TabBar(
+          controller: tabController,
+          indicatorColor: Colors.white,
+          tabs: <Widget>[
+            Tab(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.search,
+                color: Colors.grey.shade500,
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.show_chart,
+                color:Colors.grey.shade500,
+              ),
+            ),
+            Tab(
+              icon: Icon(
+                Icons.add_circle_outline,
+                color: Colors.grey.shade500,
+              ),
+            ),
+          ],
+        ),
+      ),
       body: ListView(
         children: <Widget>[
           Padding(
