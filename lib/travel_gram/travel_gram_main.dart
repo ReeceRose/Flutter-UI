@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TravelGramMainPage extends StatelessWidget {
+class TravelGramMainPage extends StatefulWidget {
+  @override
+  _TravelGramMainPageState createState() => _TravelGramMainPageState();
+}
+
+class _TravelGramMainPageState extends State<TravelGramMainPage> {
   final Color titleColour = Color.fromARGB(255, 87, 94, 106);
   final Color blueColour = Color.fromARGB(255, 84, 161, 255);
   final Color greyColour = Color.fromARGB(255, 169, 169, 169);
@@ -324,7 +329,6 @@ class TravelGramMainPage extends StatelessWidget {
               ],
             ),
           ],
-          // _imageGalleryDetail()
         ),
       ),
     );
