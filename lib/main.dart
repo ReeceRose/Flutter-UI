@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'travel_gram/travel_gram_main.dart';
 import 'food_truck/details.dart';
 import 'talent_hire/hire.dart';
 import 'profile_screen/profile.dart';
@@ -14,6 +15,7 @@ void main() => runApp(MaterialApp(
       ),
       routes: {
         '/': (context) => MyApp(),
+        '/travel_gram': (context) => TravelGramMainPage(),
         '/food_truck': (context) => FoodTruckDetailsPage(),
         '/talent_hire': (context) => HirePage(),
         '/spotify_login': (context) => SpotifyLoginPage(),
@@ -31,6 +33,12 @@ class MyApp extends StatelessWidget {
       body: Center(
         child: ListView(
           children: <Widget>[
+            RaisedButton(
+              child: Text('Travelgram'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/travel_gram');
+              },
+            ),
             RaisedButton(
               child: Text('Food Truck'),
               onPressed: () {

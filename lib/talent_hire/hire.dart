@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HirePage extends StatelessWidget {
-  Color greenColour = Color.fromARGB(255, 46, 194, 105);
-  Color backgroundGreen = Color.fromARGB(255, 233, 248, 239);
+  final Color greenColour = Color.fromARGB(255, 46, 194, 105);
+  final Color backgroundGreen = Color.fromARGB(255, 233, 248, 239);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,11 +247,11 @@ class HirePage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 15.0,
+            height: 35.0,
           ),
           Expanded(
             child: Container(
-              width: 175.0,
+              width: 300.0,
               decoration: BoxDecoration(
                 color: status == 'Available' ? greenColour : Colors.grey,
                 borderRadius: BorderRadius.only(
@@ -260,7 +260,11 @@ class HirePage extends StatelessWidget {
                 ),
               ),
               child: Center(
-                child: Text('Request'),
+                child: Text(
+                  'Request',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           )
