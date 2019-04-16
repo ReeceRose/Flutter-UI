@@ -131,12 +131,201 @@ class TravelGramMainPage extends StatelessWidget {
                       Icons.arrow_forward_ios,
                       color: Colors.grey,
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(25.0, 10.0, 25.0, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'FROM THE COMMUNITY',
+                  style: TextStyle(
+                    color: Colors.grey.shade600,
+                    fontSize: 17.0,
+                  ),
+                ),
+                Text(
+                  'View All',
+                  style: TextStyle(
+                    color: blueColour,
+                    fontSize: 17.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          _builldImageGrid(context),
+          _imageGalleryDetail(),
+          _builldImageGrid(context),
+          _imageGalleryDetail(),
         ],
+      ),
+    );
+  }
+
+  Widget _imageGalleryDetail() {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 0.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Maui Summer 2018',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0,
+                ),
+              ),
+              SizedBox(
+                height: 7.0,
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Teressa Soto added 52 photos',
+                    style: TextStyle(
+                      color: Colors.grey.shade700,
+                      fontSize: 11.0,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 4.0,
+                  ),
+                  Icon(
+                    Icons.timer,
+                    size: 4.0,
+                    color: Colors.black,
+                  ),
+                  SizedBox(
+                    width: 4.0,
+                  ),
+                  Text(
+                    '2h ago',
+                    style:
+                        TextStyle(color: Colors.grey.shade500, fontSize: 11.0),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(
+            width: 10.0,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Transform.rotate(
+                angle: -0.9,
+                child: Icon(
+                  Icons.send,
+                  color: Colors.grey.shade700,
+                ),
+              ),
+              SizedBox(
+                width: 7.0,
+              ),
+              Icon(
+                Icons.message,
+                color: Colors.grey.shade700,
+              ),
+              SizedBox(
+                width: 7.0,
+              ),
+              Icon(
+                Icons.favorite_border,
+                color: Colors.grey.shade700,
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _builldImageGrid(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0.0),
+      child: Container(
+        height: 225.0,
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: 225.0,
+              width: MediaQuery.of(context).size.width / 1.5,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  bottomLeft: Radius.circular(15.0),
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 2.0,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Container(
+                  height: 111.5,
+                  width: MediaQuery.of(context).size.width / 4,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(15.0),
+                    ),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          'https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 2.0,
+                ),
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      height: 111.5,
+                      width: MediaQuery.of(context).size.width / 4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(15.0),
+                        ),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              'https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      width: 150.0,
+                      top: 80,
+                      left: 65,
+                      child: Text(
+                        '+50',
+                        style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+          // _imageGalleryDetail()
+        ),
       ),
     );
   }
