@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             RaisedButton(
-              child: Text('Travel Gram'),
+              child: Text('Travelgram'),
               onPressed: () {
                 Navigator.pushNamed(context, '/travel_gram');
               },
